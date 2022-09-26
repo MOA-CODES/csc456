@@ -1,16 +1,18 @@
 const mongoose = require('mongoose');
 
-const connectDB = async () =>{
+const connectDB = async()=>{
     try{
         //mongodb connection string
-        const con = await mongoose.connect(process.env.MONGO_URL, {
-            useNewUrlParser: true,
-            useUnifiedTopology:true,
-            useFindAndModify:false,
-            useCreateIndex:true
+        const con = await mongoose.connect(process.env.MONGO_URI, {
+            /*these are no longer supported after mongoose 6 release in 2021, does this automatically
+                useNewUrIParser: true,
+                useUnifiedTopology:true,
+                useFindAndModify:false,
+                useCreateIndex:true
+            */ 
         })
 
-        console.log(`MongoDB connected: ${con.connection.host}`);
+        console.log(`MongoDB connected:${con.connection.host}`);
     }catch(err){
         console.log(err);
         process.exit(1);
