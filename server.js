@@ -29,8 +29,6 @@ app.set("view engine", "ejs")
 
 //load assests
 app.use('/css', express.static(path.resolve(__dirname,"assests/css")));
-
-//app.use('/css', express.static(path.resolve(__)))
 app.use('/img', express.static(path.resolve(__dirname,"assests/img")));
 app.use('/js', express.static(path.resolve(__dirname,"assests/js")));
 
