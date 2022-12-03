@@ -33,8 +33,8 @@ app.use('/img', express.static(path.resolve(__dirname,"assests/img")));
 app.use('/js', express.static(path.resolve(__dirname,"assests/js")));
 
 //load routers
-// app.use('/', require('./server/routes/router'))
+app.use('/', require('./server/routes/router'))
 
-// app.listen(PORT, ()=>{console.log(`Server is running on http://localhost:${PORT}`)});
+app.listen(PORT, ()=>{console.log(`Server is running on http://localhost:${PORT}`)});
 
 module.exports = app;
